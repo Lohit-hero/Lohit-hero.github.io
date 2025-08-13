@@ -3,45 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lohitaksha Koppada Portfolio</title>
+  <title>Lohitaksha Koppada | Portfolio</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <header>
-    <h1 data-aos="fade-down">Lohitaksha Koppada</h1>
-    <p data-aos="fade-up">AI Researcher | Chemical Scientist | Author</p>
-    <nav>
-      <a href="#profile">Profile</a>
-      <a href="#experience">Experience</a>
-      <a href="#skills">Skills</a>
-      <a href="#achievements">Achievements</a>
-      <a href="#education">Education</a>
-      <a href="#contact">Contact</a>
-    </nav>
+  <header id="hero">
+    <div class="hero-content" data-aos="fade-up">
+      <h1>Lohitaksha Koppada</h1>
+      <p>AI Researcher | Author | Scientist</p>
+      <a href="#about" class="btn">Explore</a>
+    </div>
   </header>
 
-  <section id="profile" data-aos="fade-right">
-    <h2>Profile</h2>
-    <p>Resolute and results-oriented researcher with expertise in Python, Machine Learning, Deep Learning, and Quantum Chemistry. Published author and top-ranked academic performer.</p>
-  </section>
-
-  <section id="experience" data-aos="fade-left">
-    <h2>Experience</h2>
+  <nav>
     <ul>
-      <li><strong>Master's Project:</strong> Confined Hydrogen Atom & Screened Coulomb Potentials</li>
-      <li><strong>Review Article:</strong> Eicosanoid Signaling in Alzheimer's Disease (Elsevier)</li>
-      <li><strong>Internships:</strong> Bio-signaling Pathways & Neuroinflammation Research</li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
+  </nav>
+
+  <section id="about" data-aos="fade-right">
+    <h2>About Me</h2>
+    <p>Resolute and results-oriented researcher with expertise in Python, Machine Learning, Deep Learning, and Quantum Chemistry. Published author and top-ranked academic performer.</p>
+    <a href="sita_final_cv.pdf" download class="btn">Download CV</a>
   </section>
 
-  <section id="skills" data-aos="zoom-in">
+  <section id="skills" data-aos="fade-left">
     <h2>Skills</h2>
     <div class="skills-grid">
       <span>Python</span>
       <span>Machine Learning</span>
-      <span>Deep Learning</span>
       <span>TensorFlow</span>
       <span>Keras</span>
       <span>Scikit-learn</span>
@@ -51,27 +46,23 @@
     </div>
   </section>
 
-  <section id="achievements" data-aos="fade-up">
-    <h2>Achievements</h2>
+  <section id="projects" data-aos="zoom-in">
+    <h2>Projects</h2>
     <ul>
-      <li>Published 3 books on leadership, self-development, and quantum science</li>
-      <li>GATE AIR 727 | CSIR-NET-JRF AIR 37</li>
-      <li>Top performer in Integrated Master's Program</li>
+      <li>📘 Review Article: Eicosanoid Signaling in Alzheimer's Disease (Elsevier)</li>
+      <li>🔬 Master's Thesis: Confined Hydrogen Atom & Statistical Complexity</li>
+      <li>🎙️ Podcast: Lohitaksha's Den – Interviews with Global Experts</li>
     </ul>
   </section>
 
-  <section id="education" data-aos="fade-down">
-    <h2>Education</h2>
-    <p><strong>University of Hyderabad</strong> – Integrated Master's in Chemical Sciences (CGPA: 9.05)</p>
-    <p><strong>D.A.V. Public School</strong> – 12th Grade (94.25%)</p>
-    <p><strong>Jindal School</strong> – 10th Grade (90.2%)</p>
-  </section>
-
-  <section id="contact" data-aos="zoom-in-up">
-    <h2>Contact</h2>
-    <p>Email: lohitaksha.koppada123@gmail.com</p>
-    <p>LinkedIn: <a href="https://lohitakshakoppada.wixsite.com/lohitakshaden" target="_blank">Lohitaksha's Den</a></p>
-    <p>Website: <a href="https://lohitakshakoppada.wixsite.com/lohitaksha-fiard" target="_blank">FIARD Portfolio</a></p>
+  <section id="contact" data-aos="fade-up">
+    <h2>Contact Me</h2>
+    <form action="https://formspree.io/f/yourFormID" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
   </section>
 
   <footer>
@@ -79,8 +70,6 @@
   </footer>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
