@@ -1,92 +1,359 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lohitaksha Koppada | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lohitaksha Koppada — Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ====== Root & Reset ====== */
+    :root{
+      --bg:#07070b;
+      --card:#0f1117;
+      --muted:#9aa0a6;
+      --accent:#ffb86b;
+      --accent-2:#7c5cff;
+      --glass: rgba(255,255,255,0.03);
+      --glass-2: rgba(124,92,255,0.06);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(124,92,255,0.06), transparent),
+                  radial-gradient(900px 400px at 90% 90%, rgba(255,184,107,0.04), transparent),
+                  var(--bg);
+      color:#e6eef8; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+      -webkit-text-size-adjust:100%;
+    }
+    a{color:inherit}
+
+    /* ====== Header / Nav ====== */
+    header{position:fixed;left:0;right:0;top:12px;z-index:1000;padding:0 28px}
+    .nav{
+      display:flex;align-items:center;gap:20px;justify-content:space-between;
+      max-width:1100px;margin:0 auto;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+      border-radius:14px;padding:10px 18px;backdrop-filter:blur(6px);
+      box-shadow:0 6px 20px rgba(2,6,23,0.6);
+    }
+    .brand{display:flex;gap:14px;align-items:center}
+    .logo{
+      width:46px;height:46px;border-radius:10px;background:linear-gradient(135deg,var(--accent-2),var(--accent));
+      display:grid;place-items:center;font-weight:800;color:#0b0711;font-size:18px;box-shadow:0 6px 18px rgba(124,92,255,0.12), inset 0 -2px 6px rgba(0,0,0,0.25);
+    }
+    .brand h1{font-size:16px;margin:0}
+    nav ul{display:flex;gap:14px;align-items:center;list-style:none;margin:0;padding:0}
+    nav a{padding:8px 12px;border-radius:10px;text-decoration:none;color:var(--muted);font-weight:600;font-size:14px}
+    nav a.active, nav a:hover{background:linear-gradient(90deg, rgba(255,255,255,0.03), transparent);color:var(--accent)}
+
+    /* Mobile menu */
+    .hamb{display:none;cursor:pointer;border-radius:10px;padding:8px}
+
+    /* ====== Hero ====== */
+    .hero{min-height:100vh;display:grid;place-items:center;padding:120px 20px 80px}
+    .container{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 420px;gap:36px;align-items:center}
+    .intro{
+      background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);padding:36px;border-radius:16px;box-shadow:0 8px 40px rgba(2,6,23,0.6);
+      border:1px solid rgba(255,255,255,0.02);
+    }
+    .intro h2{font-size:28px;margin:0 0 12px}
+    .intro h2 .name{background:linear-gradient(90deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .intro p{color:var(--muted);margin-bottom:18px}
+    .cta{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#08060b;font-weight:700;text-decoration:none}
+    .ghost{padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);color:var(--muted);text-decoration:none}
+
+    /* Right card */
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:22px;border-radius:14px;border:1px solid rgba(255,255,255,0.03)}
+    .headline{display:flex;gap:12px;align-items:center}
+    .avatar{width:84px;height:84px;border-radius:12px;background:linear-gradient(180deg,var(--accent-2),var(--accent));display:grid;place-items:center;font-weight:800;color:#07070b}
+    .meta{color:var(--muted);font-size:13px}
+    .skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+    .chip{background:var(--glass);padding:8px 10px;border-radius:999px;font-weight:600;color:var(--muted);font-size:13px}
+
+    /* ====== Sections ====== */
+    main{max-width:1100px;margin:30px auto 80px;padding:0 20px}
+    section{margin:36px 0;padding:26px;border-radius:14px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);border:1px solid rgba(255,255,255,0.02);box-shadow:0 6px 30px rgba(2,6,23,0.45)}
+    section h3{margin:0 0 12px;color:var(--accent)}
+    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .card-sm{background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
+    .muted{color:var(--muted);font-size:14px}
+
+    /* Projects */
+    .projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .project{padding:14px;border-radius:12px;background:linear-gradient(90deg, rgba(124,92,255,0.04), rgba(255,184,107,0.02));border:1px solid rgba(255,255,255,0.02)}
+    .project h4{margin:0 0 6px;font-size:15px}
+    .tag{display:inline-block;padding:6px 8px;border-radius:8px;background:rgba(255,255,255,0.02);font-weight:700;font-size:12px;color:var(--muted)}
+
+    /* Contact */
+    .contact-grid{display:grid;grid-template-columns:1fr 340px;gap:18px}
+    .socials{display:flex;gap:10px;flex-wrap:wrap}
+    .soc{padding:10px 12px;border-radius:10px;background:var(--glass);font-weight:700;color:var(--muted);text-decoration:none}
+
+    footer{text-align:center;color:var(--muted);padding:28px 18px}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .container{grid-template-columns:1fr}
+      .projects-grid{grid-template-columns:repeat(2,1fr)}
+      .grid{grid-template-columns:1fr}
+      .contact-grid{grid-template-columns:1fr}
+    }
+    @media (max-width:620px){
+      nav ul{display:none}
+      .hamb{display:block}
+      .card{padding:14px}
+      .projects-grid{grid-template-columns:1fr}
+    }
+
+    /* ====== Micro-animations ====== */
+    .reveal{opacity:0;transform:translateY(12px);transition:all 650ms cubic-bezier(.2,.9,.3,1)}
+    .reveal.visible{opacity:1;transform:none}
+    .float{animation:float 6s ease-in-out infinite}
+    @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-10px)}100%{transform:translateY(0)}}
+
+    /* Nice focus states */
+    a:focus{outline:3px solid rgba(124,92,255,0.18);outline-offset:3px}
+
+    /* subtle divider */
+    .hr{height:1px;background:linear-gradient(90deg, rgba(255,255,255,0.02), transparent);margin:16px 0;border-radius:2px}
+
+    /* small helper */
+    .muted-sm{color:var(--muted);font-size:13px}
+
+  </style>
 </head>
 <body>
   <header>
-    <nav class="navbar">
-      <div class="logo">Lohitaksha</div>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#achievements">Achievements</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <div class="menu-toggle">☰</div>
-    </nav>
+    <div class="nav">
+      <div class="brand">
+        <div class="logo">LK</div>
+        <div>
+          <h1 style="font-size:15px;margin:0">Lohitaksha Koppada</h1>
+          <div class="muted-sm">M.Tech (IIT Kanpur) • Researcher • Author</div>
+        </div>
+      </div>
+
+      <nav>
+        <ul id="menu">
+          <li><a href="#hero" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#achievements">Achievements</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="hamb" id="hamb">☰</div>
+    </div>
   </header>
 
-  <section id="hero">
-    <div class="hero-content">
-      <h1>Hi, I'm <span>Lohitaksha Koppada</span></h1>
-      <p>Innovative researcher in materials science, quantum mechanics, and computational modelling.</p>
-      <a href="#contact" class="btn">Get in Touch</a>
+  <!-- HERO -->
+  <section id="hero" class="hero">
+    <div class="container">
+      <div class="intro reveal">
+        <h2>Hello — I’m <span class="name">Lohitaksha Koppada</span></h2>
+        <p class="muted">Innovative researcher with expertise in materials science, quantum mechanics, and computational modelling. Founder of FIARD and host of "Lohitaksha's Den" podcast. Author and lead researcher with multiple peer-reviewed publications.</p>
+        <div class="cta">
+          <a class="btn" href="#contact">Let’s collaborate</a>
+          <a class="ghost" href="/mnt/data/Lohitaksha's one-page CV.pdf" target="_blank">Download CV</a>
+        </div>
+
+        <div class="hr"></div>
+        <div class="muted-sm">Selected — CSIR-NET-JRF AIR 37 • IMSc Topper • Author (multiple books)</div>
+      </div>
+
+      <aside class="card reveal float">
+        <div class="headline">
+          <div class="avatar">LK</div>
+          <div>
+            <div style="font-weight:800">Lohitaksha K.</div>
+            <div class="muted">Materials | Quantum | Computation</div>
+          </div>
+        </div>
+        <div class="skills">
+          <div class="chip">Python</div>
+          <div class="chip">C / C++</div>
+          <div class="chip">Machine Learning</div>
+          <div class="chip">Quantum Mechanics</div>
+          <div class="chip">XRD / EPR Basics</div>
+        </div>
+
+        <div style="margin-top:12px" class="muted-sm">Contact: <a href="mailto:klohitaksha25@iitk.ac.in">klohitaksha25@iitk.ac.in</a></div>
+      </aside>
     </div>
   </section>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      Innovative researcher with expertise in materials science, quantum mechanics, and computational modelling,
-      complemented by strong skills in machine learning, data analysis, and scientific communication.
-      Founder of FIARD and host of Lohitaksha’s Den podcast — blending leadership and personal growth.
-    </p>
-  </section>
+  <main>
+    <section id="about" class="reveal">
+      <h3>About Me</h3>
+      <p class="muted">I combine theoretical, computational, and experimental methods to solve complex problems in multi-electron systems and materials. My work blends rigorous quantum mechanics with practical simulations and data-driven analysis. Outside research, I run FIARD — a leadership & coaching initiative — and host a podcast on leadership and growth.</p>
 
-  <section id="skills">
-    <h2>Core Competencies</h2>
-    <ul>
-      <li><strong>Programming:</strong> Python, C, C++</li>
-      <li><strong>Machine Learning:</strong> Regression, Classification, Clustering, Model evaluation</li>
-      <li><strong>Soft Skills:</strong> Leadership, Communication, Presentations, Collaboration, Problem Solving</li>
-      <li><strong>Mindset:</strong> Innovation, Risk-taking, Opportunity Recognition</li>
-    </ul>
-  </section>
+      <div style="height:12px"></div>
+      <div class="grid">
+        <div class="card-sm">
+          <strong>Research Focus</strong>
+          <div class="muted">Hydrogen embrittlement, screened potentials in confined atoms, nonadiabatic dynamics, and many-electron problems.</div>
+        </div>
+        <div class="card-sm">
+          <strong>Entrepreneurship & Media</strong>
+          <div class="muted">Founder — FIARD. Podcast host — Lohitaksha's Den (Apple/Spotify). Author of academic & self-help books.</div>
+        </div>
+      </div>
+    </section>
 
-  <section id="achievements">
-    <h2>Selected Achievements</h2>
-    <ul>
-      <li>Author of multiple books: <em>Studies on Shell Confined Atoms</em>, <em>Brainwaves of The Bold</em>, <em>It’s Your Life: Make It Happen</em></li>
-      <li>Lead author — Elsevier review in <em>European Journal of Pharmacology</em></li>
-      <li>CSIR-NET-JRF AIR 37 (Dec 2024)</li>
-      <li>IMSc Topper (Years 4 & 5)</li>
-    </ul>
-  </section>
+    <section id="skills" class="reveal">
+      <h3>Core Competencies</h3>
+      <div class="grid">
+        <div class="card-sm">
+          <strong>Programming & Tools</strong>
+          <div class="muted">Python, C, C++, NumPy, Pandas, matplotlib, MOPAC (experience)</div>
+        </div>
+        <div class="card-sm">
+          <strong>Machine Learning</strong>
+          <div class="muted">Regression, Classification, Clustering, Model evaluation — hands-on with Scaler & IBM courses.</div>
+        </div>
+      </div>
 
-  <section id="projects">
-    <h2>Experience & Projects</h2>
-    <p><strong>The Quantum Revolution</strong> — Two-volume Quantum Mechanics series (Accepted by CRC Press)</p>
-    <p><strong>M.Tech Project — IIT Kanpur</strong>: Fe-30Mn-8Al-1C Steel & Hydrogen Embrittlement study with microanalysis & computational modelling.</p>
-    <p><strong>Master’s Project — UoH</strong>: Screened potentials applied to confined hydrogen atom.</p>
-    <p><strong>Review Author</strong>: Eicosanoid Signaling in Neuroinflammation & Alzheimer’s disease.</p>
-  </section>
+      <div style="height:16px"></div>
+      <div class="card-sm">
+        <strong>Soft Skills</strong>
+        <div class="muted">Leadership, Communication, Presentations, Team Management, Scientific Writing</div>
+      </div>
+    </section>
 
-  <section id="education">
-    <h2>Education</h2>
-    <ul>
-      <li>M.Tech in Materials Science & Engineering — IIT Kanpur (2025 – Present)</li>
-      <li>Integrated Master’s in Chemical Sciences — UoH (2020 – 2025)</li>
-      <li>Class 12: 94.2% | Class 10: 90.2%</li>
-    </ul>
-  </section>
+    <section id="projects" class="reveal">
+      <h3>Experience & Projects</h3>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:klohitaksha25@iitk.ac.in">klohitaksha25@iitk.ac.in</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/lohitaksha-den" target="_blank">linkedin.com/in/lohitaksha-den</a></p>
-  </section>
+      <div class="projects-grid">
+        <div class="project">
+          <h4>The Quantum Revolution — Book (CRC Press)</h4>
+          <div class="muted">Two-volume graduate-level series (accepted). Advanced quantum mechanics topics for grad students.</div>
+          <div style="margin-top:10px"><span class="tag">Writing</span> <span class="tag">Quantum</span></div>
+        </div>
+
+        <div class="project">
+          <h4>M.Tech Project — IIT Kanpur</h4>
+          <div class="muted">Fe-30Mn-8Al-1C Steel & Hydrogen Embrittlement: experiments + computational modelling (microanalysis: SEM/TEM/XRF).</div>
+          <div style="margin-top:10px"><span class="tag">Materials</span> <span class="tag">Hydrogen</span></div>
+        </div>
+
+        <div class="project">
+          <h4>Master’s Project — UoH</h4>
+          <div class="muted">Screened Coulomb potentials & confined hydrogen; Hulthén and Yukawa potentials; energy spectra and information-theoretic measures.</div>
+          <div style="margin-top:10px"><span class="tag">Theory</span> <span class="tag">Python</span></div>
+        </div>
+
+        <div class="project">
+          <h4>Review — Eicosanoid Signaling (Eur. J. Pharmacol.)</h4>
+          <div class="muted">Lead author on a cross-disciplinary review on neuroinflammation and Alzheimer's disease.</div>
+          <div style="margin-top:10px"><span class="tag">Review</span> <span class="tag">Neuro</span></div>
+        </div>
+
+        <div class="project">
+          <h4>Modified Langevin Equation</h4>
+          <div class="muted">Theory work on electrophoretic effects with ion-specific mobility terms.</div>
+          <div style="margin-top:10px"><span class="tag">Theory</span></div>
+        </div>
+
+        <div class="project">
+          <h4>Podcast & Coaching — FIARD</h4>
+          <div class="muted">Hosted interviews with leadership experts; ran coaching programs worldwide.</div>
+          <div style="margin-top:10px"><span class="tag">Media</span> <span class="tag">Leadership</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="achievements" class="reveal">
+      <h3>Selected Achievements</h3>
+      <ul style="margin:12px 0 0 18px">
+        <li class="muted">Author: Studies on Shell Confined Atoms (LAP, 2025)</li>
+        <li class="muted">Author: Brainwaves of The Bold & It’s Your Life: Make It Happen (Amazon, 2025)</li>
+        <li class="muted">Lead author — Elsevier review in European Journal of Pharmacology (2024)</li>
+        <li class="muted">CSIR-NET-JRF Chemical Sciences (Dec 2024) — AIR 37</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="reveal">
+      <h3>Contact</h3>
+      <div class="contact-grid">
+        <div>
+          <p class="muted">Email me for collaborations, thesis inquiries, or speaking requests.</p>
+          <div class="socials">
+            <a class="soc" href="mailto:klohitaksha25@iitk.ac.in">Email</a>
+            <a class="soc" href="https://linkedin.com/in/lohitaksha-den" target="_blank">LinkedIn</a>
+            <a class="soc" href="https://lohitakshakoppada.wixsite.com/lohitaksha-fiard" target="_blank">Website</a>
+            <a class="soc" href="https://podcasts.apple.com/in/podcast/lohitakshas-den/id1699553574" target="_blank">Podcast</a>
+          </div>
+
+          <div style="margin-top:12px" class="muted-sm">Location: India • Currently: M.Tech, IIT Kanpur</div>
+        </div>
+
+        <div class="card-sm">
+          <strong>Quick Contacts</strong>
+          <div class="muted">klohitaksha25@iitk.ac.in<br>lohitaksha.koppada123@gmail.com<br>+91 99899 27436</div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <p>© 2025 Lohitaksha Koppada</p>
+    © 2025 — Lohitaksha Koppada • Designed with ❤️
   </footer>
+
+  <script>
+    // Smooth scroll and active menu
+    const menuLinks = document.querySelectorAll('#menu a');
+    menuLinks.forEach(a=>a.addEventListener('click',e=>{
+      e.preventDefault();
+      document.querySelectorAll('#menu a').forEach(x=>x.classList.remove('active'));
+      a.classList.add('active');
+      const id = a.getAttribute('href');
+      document.querySelector(id).scrollIntoView({behavior:'smooth',block:'start'});
+    }));
+
+    // Mobile menu toggle
+    const hamb = document.getElementById('hamb');
+    const menu = document.getElementById('menu');
+    hamb.addEventListener('click',()=>{
+      if(menu.style.display==='flex') menu.style.display='none';
+      else menu.style.display='flex';
+      menu.style.flexDirection='column';
+    });
+
+    // Intersection observer for reveal
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting) e.target.classList.add('visible');
+      });
+    },{threshold:0.12});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+    // highlight menu based on scroll
+    const sections = document.querySelectorAll('main section, #hero');
+    window.addEventListener('scroll',()=>{
+      let fromTop = window.scrollY + 120;
+      sections.forEach(sec=>{
+        const id = '#' + sec.id;
+        const link = document.querySelector('#menu a[href="'+id+'"]');
+        if(!link) return;
+        if(sec.offsetTop <= fromTop && sec.offsetTop + sec.offsetHeight > fromTop){
+          document.querySelectorAll('#menu a').forEach(x=>x.classList.remove('active'));
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // tiny accessibility: enable keyboard nav to sections
+    document.addEventListener('keydown',(e)=>{
+      if(e.key === 'k' && (e.ctrlKey||e.metaKey)){
+        document.querySelector('#contact a')?.focus();
+      }
+    });
+  </script>
 </body>
 </html>
