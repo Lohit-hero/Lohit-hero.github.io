@@ -10,7 +10,20 @@
 </head>
 <body>
   <header id="hero">
-    <div class="hero-content" data-aos="fade-up">
+    <!-- Animated SVG Lines for subtle movement -->
+    <svg class="hero-bg-svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="line-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#00ffff" stop-opacity="0.3" />
+          <stop offset="100%" stop-color="#9c27b0" stop-opacity="0.1" />
+        </linearGradient>
+      </defs>
+      <line class="animated-line" x1="0" y1="0" x2="800" y2="600" stroke="url(#line-grad)" stroke-width="2" />
+      <line class="animated-line" x1="800" y1="0" x2="0" y2="600" stroke="url(#line-grad)" stroke-width="2" />
+      <circle class="moving-circle" cx="400" cy="300" r="100" stroke="#00ffff" stroke-opacity="0.15" stroke-width="4" fill="none"/>
+    </svg>
+
+    <div class="hero-content" data-aos="fade-up" data-aos-duration="1500">
       <h1>Lohitaksha Koppada</h1>
       <p>AI Researcher | Author | Scientist</p>
       <a href="#about" class="btn">Explore</a>
@@ -19,20 +32,20 @@
 
   <nav>
     <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about" data-aos="fade-down" data-aos-delay="100">About</a></li>
+      <li><a href="#skills" data-aos="fade-down" data-aos-delay="200">Skills</a></li>
+      <li><a href="#projects" data-aos="fade-down" data-aos-delay="300">Projects</a></li>
+      <li><a href="#contact" data-aos="fade-down" data-aos-delay="400">Contact</a></li>
     </ul>
   </nav>
 
-  <section id="about" data-aos="fade-right">
+  <section id="about" data-aos="fade-right" data-aos-duration="1000" class="section-content">
     <h2>About Me</h2>
     <p>Resolute and results-oriented researcher with expertise in Python, Machine Learning, Deep Learning, and Quantum Chemistry. Published author and top-ranked academic performer.</p>
     <a href="sita_final_cv.pdf" download class="btn">Download CV</a>
   </section>
 
-  <section id="skills" data-aos="fade-left">
+  <section id="skills" data-aos="fade-left" data-aos-duration="1000" class="section-content">
     <h2>Skills</h2>
     <div class="skills-grid">
       <span>Python</span>
@@ -46,7 +59,7 @@
     </div>
   </section>
 
-  <section id="projects" data-aos="zoom-in">
+  <section id="projects" data-aos="zoom-in" data-aos-duration="1200" class="section-content">
     <h2>Projects</h2>
     <ul>
       <li>📘 Review Article: Eicosanoid Signaling in Alzheimer's Disease (Elsevier)</li>
@@ -55,12 +68,12 @@
     </ul>
   </section>
 
-  <section id="contact" data-aos="fade-up">
+  <section id="contact" data-aos="fade-up" data-aos-duration="1000" class="section-content">
     <h2>Contact Me</h2>
-    <form action="https://formspree.io/f/yourFormID" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+    <form action="https://formspree.io/f/yourFormID" method="POST" class="contact-form" novalidate>
+      <input type="text" name="name" placeholder="Your Name" required aria-label="Your Name" />
+      <input type="email" name="email" placeholder="Your Email" required aria-label="Your Email" />
+      <textarea name="message" rows="5" placeholder="Your Message" required aria-label="Your Message"></textarea>
       <button type="submit" class="btn">Send Message</button>
     </form>
   </section>
