@@ -1,72 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Lohitaksha Koppada | Portfolio</title>
-  <link rel="stylesheet" href="assets/style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lohitaksha Koppada - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1>Lohitaksha Koppada</h1>
-    <nav>
-      <ul>
-        <li><a href="profile.html">Profile</a></li>
-        <li><a href="experience.html">Experience</a></li>
-        <li><a href="skills.html">Skills</a></li>
-        <li><a href="certifications.html">Certifications</a></li>
-        <li><a href="achievements.html">Achievements</a></li>
-        <li><a href="education.html">Education</a></li>
-      </ul>
-    </nav>
-  </header>
+    <!-- HEADER -->
+    <header class="glass-header">
+        <div class="logo">Lohitaksha Koppada</div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="certifications.html">Certifications</a></li>
+                <li><a href="achievements.html">Achievements</a></li>
+                <li><a href="education.html">Education</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <section class="hero" data-aos="fade-up">
-    <img src="assets/images/hero-ai.jpg" alt="AI Hero Image" />
-    <div class="hero-text">
-      <h2>Welcome to My World</h2>
-      <p>Explore my journey through science, machine learning, and leadership.</p>
-    </div>
-  </section>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Welcome to My Portfolio</h1>
+            <p>Researcher | Programmer | Leader | Innovator</p>
+            <a href="profile.html" class="btn">Explore My Work</a>
+        </div>
+        <div class="hero-image">
+            <img src="assets/profile.png" alt="Profile Image">
+        </div>
+    </section>
 
-  <section class="section" data-aos="fade-up">
-    <h2>Explore Sections</h2>
-    <div class="grid">
-      <a href="profile.html" class="grid-item" data-aos="zoom-in">
-        <img src="assets/images/profile.jpg" alt="Profile" />
-        <h3>Profile</h3>
-      </a>
-      <a href="experience.html" class="grid-item" data-aos="zoom-in">
-        <img src="assets/images/experience.jpg" alt="Experience" />
-        <h3>Experience</h3>
-      </a>
-      <a href="skills.html" class="grid-item" data-aos="zoom-in">
-        <img src="assets/images/skills.jpg" alt="Skills" />
-        <h3>Skills</h3>
-      </a>
-      <a href="certifications.html" class="grid-item" data-aos="zoom-in">
-        <img src="assets/images/certifications.jpg" alt="Certifications" />
-        <h3>Certifications</h3>
-      </a>
-      <a href="achievements.html" class="grid-item" data-aos="zoom-in">
-        <img src="assets/images/achievements.jpg" alt="Achievements" />
-        <h3>Achievements</h3>
-      </a>
-      <a href="education.html" class="grid-item" data-aos="zoom-in">
-        <img src="assets/images/education.jpg" alt="Education" />
-        <h3>Education</h3>
-      </a>
-    </div>
-  </section>
+    <!-- QUICK LINKS -->
+    <section class="cards">
+        <div class="card" onclick="navigateTo('profile.html')">
+            <h3>Profile</h3>
+            <p>Get to know my professional journey and vision.</p>
+        </div>
+        <div class="card" onclick="navigateTo('experience.html')">
+            <h3>Experience</h3>
+            <p>Explore my academic & research contributions.</p>
+        </div>
+        <div class="card" onclick="navigateTo('skills.html')">
+            <h3>Skills</h3>
+            <p>Discover my technical & leadership skill set.</p>
+        </div>
+        <div class="card" onclick="navigateTo('certifications.html')">
+            <h3>Certifications</h3>
+            <p>View my credentials and professional certifications.</p>
+        </div>
+        <div class="card" onclick="navigateTo('achievements.html')">
+            <h3>Achievements</h3>
+            <p>Highlights of my awards & recognitions.</p>
+        </div>
+        <div class="card" onclick="navigateTo('education.html')">
+            <h3>Education</h3>
+            <p>My academic background & milestones.</p>
+        </div>
+    </section>
 
-  <footer>
-    <p>&copy; 2025 Lohitaksha Koppada</p>
-  </footer>
-
-  <script src="assets/script.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2025 Lohitaksha Koppada | Designed with ❤️</p>
+    </footer>
 </body>
 </html>
