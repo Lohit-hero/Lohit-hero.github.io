@@ -1,11 +1,14 @@
-function navigateTo(page) {
-    document.body.classList.add("fade-out");
-    setTimeout(() => {
-        window.location.href = page;
-    }, 300);
-}
+document.addEventListener('DOMContentLoaded', () => {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
 
-// Smooth fade-in effect
-window.addEventListener("load", () => {
-    document.body.classList.add("fade-in");
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+    });
+  });
 });
