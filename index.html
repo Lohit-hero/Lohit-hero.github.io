@@ -1,119 +1,382 @@
-<!-- index.html -->
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" class="light">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Lohitaksha Koppada — Home</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<canvas id="particle-canvas"></canvas>
-<header>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="experience.html">Experience</a>
-    <a href="skills.html">Skills</a>
-    <a href="publications.html">Publications</a>
-    <a href="achievements.html">Achievements</a>
-    <a href="education.html">Education</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
-<main>
-  <section class="hero">
-    <h1>LOHITAKSHA KOPPADA</h1>
-    <p>Integrated Master's (IMSc) in Chemical Sciences — Researcher in Quantum Chemistry & Machine Learning</p>
-    <p>Resolute researcher with strong computational skills, machine learning expertise, and a record of publications and leadership in collaborative research.</p>
-  </section>
-</main>
-<footer>
-  <p>© 2025 Lohitaksha Koppada</p>
-</footer>
-<script src="particles.js"></script>
-</body>
-</html>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lohitaksha Koppada - Portfolio</title>
+    <!-- Google Fonts for the Inter typeface -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN for utility classes -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide icons for graphical elements -->
+    <script src="https://unpkg.com/lucide-js"></script>
 
-<!-- about.html -->
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>About — Lohitaksha Koppada</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<canvas id="particle-canvas"></canvas>
-<header>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="experience.html">Experience</a>
-    <a href="skills.html">Skills</a>
-    <a href="publications.html">Publications</a>
-    <a href="achievements.html">Achievements</a>
-    <a href="education.html">Education</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
-<main>
-  <section>
-    <h2>About Me</h2>
-    <p>Resolute and results-oriented researcher with expertise in independently designing and executing complex projects. Skilled in Python programming, machine learning, and advanced theoretical chemistry. Recognized for academic excellence, leadership, and effective communication in interdisciplinary research teams.</p>
-  </section>
-</main>
-<footer>
-  <p>© 2025 Lohitaksha Koppada</p>
-</footer>
-<script src="particles.js"></script>
-</body>
-</html>
+    <style>
+        /* Custom styles to complement Tailwind's utility classes */
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .text-primary-500 {
+          color: #3b82f6;
+        }
+        .dark .text-primary-400 {
+          color: #60a5fa;
+        }
+        /* Style to handle the multi-page navigation */
+        .page {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        .page.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .nav-link.active {
+            position: relative;
+            color: #3b82f6;
+            font-weight: 600;
+        }
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #3b82f6;
+            animation: slideIn 0.3s ease-out;
+        }
+        @keyframes slideIn {
+            from { width: 0; }
+            to { width: 100%; }
+        }
 
-<!-- experience.html -->
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Experience — Lohitaksha Koppada</title>
-<link rel="stylesheet" href="style.css">
+        .animate-pulse-slow {
+            animation: pulse-slow 6s ease-in-out infinite;
+        }
+        @keyframes pulse-slow {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+    </style>
 </head>
-<body>
-<canvas id="particle-canvas"></canvas>
-<header>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="experience.html">Experience</a>
-    <a href="skills.html">Skills</a>
-    <a href="publications.html">Publications</a>
-    <a href="achievements.html">Achievements</a>
-    <a href="education.html">Education</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
-<main>
-  <section>
-    <h2>Experience & Projects</h2>
-    <article>
-      <h3>Master’s Project: Confined Hydrogen Atom</h3>
-      <p>Theoretical and computational analysis of screened Coulomb potentials, Shannon entropy, disequilibrium, and statistical complexity. Guide: Prof. Kalidas Sen.</p>
-    </article>
-    <article>
-      <h3>Collaborative Review — Eicosanoid Signaling in Neuroinflammation</h3>
-      <p>Lead author; published in European Journal of Pharmacology (May 2024).</p>
-    </article>
-    <article>
-      <h3>Summer Projects & Internships</h3>
-      <p>Worked on biosignalling pathways, electrophoretic models, and research presentations.</p>
-    </article>
-  </section>
-</main>
-<footer>
-  <p>© 2025 Lohitaksha Koppada</p>
-</footer>
-<script src="particles.js"></script>
+<body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+
+    <!-- Header and Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-lg p-4 transition-colors duration-300">
+        <div class="container mx-auto flex justify-between items-center max-w-6xl">
+            <h1 class="text-2xl font-bold text-gray-800 dark:text-white">
+                Lohitaksha Koppada
+            </h1>
+            <nav class="flex space-x-6 text-gray-600 dark:text-gray-300">
+                <a href="#profile" class="nav-link hover:text-primary-500 transition-colors">Profile</a>
+                <a href="#education" class="nav-link hover:text-primary-500 transition-colors">Education</a>
+                <a href="#experience" class="nav-link hover:text-primary-500 transition-colors">Experience</a>
+                <a href="#skills" class="nav-link hover:text-primary-500 transition-colors">Skills</a>
+                <a href="#achievements" class="nav-link hover:text-primary-500 transition-colors">Achievements</a>
+            </nav>
+            <button
+                id="theme-toggle"
+                class="p-2 rounded-full text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                aria-label="Toggle dark mode"
+            >
+                <i data-lucide="moon"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="pt-20">
+        <!-- Profile Page -->
+        <section id="profile" class="page active py-20 px-4 min-h-screen flex items-center justify-center">
+            <div class="container mx-auto max-w-6xl">
+                <div class="flex flex-col md:flex-row items-center gap-12 text-center md:text-left">
+                    <div class="md:w-1/2">
+                        <h2 class="text-6xl font-extrabold text-gray-800 dark:text-white leading-tight">
+                            Lohitaksha Koppada
+                        </h2>
+                        <p class="mt-4 text-xl text-gray-600 dark:text-gray-300">
+                            Resolute and results-oriented professional with expertise in research,
+                            Python programming, and machine learning.
+                        </p>
+                        <div class="mt-8 flex flex-wrap justify-center md:justify-start gap-6 text-lg">
+                            <a href="mailto:lohitaksha.koppada123@gmail.com" class="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-primary-500 transition-colors">
+                                <i data-lucide="mail" class="w-5 h-5"></i>
+                                <span>Email</span>
+                            </a>
+                            <a href="tel:+919989927436" class="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-primary-500 transition-colors">
+                                <i data-lucide="phone" class="w-5 h-5"></i>
+                                <span>Phone</span>
+                            </a>
+                            <a href="https://lohitakshakoppada.wixsite.com/lohitakshaden" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-primary-500 transition-colors">
+                                <i data-lucide="linkedin" class="w-5 h-5"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 flex justify-center items-center">
+                        <svg class="w-full max-w-sm" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="currentColor" d="M50.4,-57.8C65.9,-46.8,80.1,-31.2,80.5,-15.5C80.8,0.2,67.3,16,58.7,35.1C50.1,54.1,46.3,76.4,32.7,80.6C19.1,84.7,-4.4,70.6,-22.4,59.3C-40.4,48.1,-52.9,39.6,-61.1,25.9C-69.4,12.2,-73.4,-6.8,-69.1,-21.8C-64.8,-36.8,-52.3,-47.8,-37.9,-58.5C-23.5,-69.2,-9.2,-79.6,4.5,-80.7C18.2,-81.9,36.5,-73.9,50.4,-57.8Z" transform="translate(100 100)" class="text-primary-500/20 dark:text-primary-400/20 animate-pulse-slow" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Page -->
+        <section id="education" class="page py-20 px-4">
+            <div class="container mx-auto max-w-6xl">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-16 flex items-center justify-center gap-4 text-gray-800 dark:text-white">
+                    <i data-lucide="graduation-cap" class="w-12 h-12"></i>
+                    Education
+                </h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-6 transition-transform hover:scale-[1.02] transform-gpu transition-colors duration-300">
+                        <h3 class="text-2xl font-semibold text-primary-600 dark:text-primary-400">Integrated Master’s Program in Chemical Sciences</h3>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm mt-1">University of Hyderabad, 2025</p>
+                        <ul class="list-disc list-inside mt-4 text-gray-700 dark:text-gray-300 space-y-2">
+                            <li>1st rank holder for 4th and 5th year</li>
+                            <li>Secured 2nd rank overall among combined Master’s and Integrated Master's students in the 5th year.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-6 transition-transform hover:scale-[1.02] transform-gpu transition-colors duration-300">
+                        <h3 class="text-2xl font-semibold text-primary-600 dark:text-primary-400">12th Grade</h3>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm mt-1">D.A.V. Public School, 2020</p>
+                        <ul class="list-disc list-inside mt-4 text-gray-700 dark:text-gray-300 space-y-2">
+                            <li>Achieved 94.25%</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-6 transition-transform hover:scale-[1.02] transform-gpu transition-colors duration-300">
+                        <h3 class="text-2xl font-semibold text-primary-600 dark:text-primary-400">10th Grade</h3>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm mt-1">Jindal School, 2018</p>
+                        <ul class="list-disc list-inside mt-4 text-gray-700 dark:text-gray-300 space-y-2">
+                            <li>Achieved 90.2%</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Page -->
+        <section id="experience" class="page py-20 px-4">
+            <div class="container mx-auto max-w-6xl">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-16 flex items-center justify-center gap-4 text-gray-800 dark:text-white">
+                    <i data-lucide="briefcase" class="w-12 h-12"></i>
+                    Experience
+                </h2>
+                <div class="grid gap-8">
+                    <div class="bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-6 transition-transform hover:scale-[1.02] transform-gpu transition-colors duration-300">
+                        <h3 class="text-2xl font-semibold text-primary-600 dark:text-primary-400">Master's Project: Plasma and Spatially Confined Hydrogen Atom</h3>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm mt-1">Dec 2024 - Mar 2025</p>
+                        <ul class="list-disc list-inside mt-4 text-gray-700 dark:text-gray-300 space-y-2">
+                            <li>Conducted theoretical and computational investigation of confined hydrogen atoms.</li>
+                            <li>Analyzed the interplay between quantum confinement and environmental screening effects.</li>
+                            <li>Used information-theoretic measures like Shannon entropy and statistical complexity.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-6 transition-transform hover:scale-[1.02] transform-gpu transition-colors duration-300">
+                        <h3 class="text-2xl font-semibold text-primary-600 dark:text-primary-400">Review Article Writing: Eicosanoid Signaling in Neuroinflammation</h3>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm mt-1">May 2022 - Jan 2023</p>
+                        <ul class="list-disc list-inside mt-4 text-gray-700 dark:text-gray-300 space-y-2">
+                            <li>Led a review article on eicosanoid signaling in Alzheimer's disease.</li>
+                            <li>Published the manuscript in a peer-reviewed European Journal of Pharmacology (May 2024).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Page -->
+        <section id="skills" class="page py-20 px-4">
+            <div class="container mx-auto max-w-6xl">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-16 flex items-center justify-center gap-4 text-gray-800 dark:text-white">
+                    <i data-lucide="lightbulb" class="w-12 h-12"></i>
+                    Skills
+                </h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-6 transition-colors duration-300">
+                        <h3 class="text-2xl font-semibold text-primary-600 dark:text-primary-400 flex items-center gap-2 mb-4">
+                            <i data-lucide="code" class="w-6 h-6"></i>
+                            Programming
+                        </h3>
+                        <ul class="text-gray-700 dark:text-gray-300 space-y-2">
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i>Python (NumPy, Pandas, Matplotlib)</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i>C, C++, C#, Java</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i>Docker, Kubernetes</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-6 transition-colors duration-300">
+                        <h3 class="text-2xl font-semibold text-primary-600 dark:text-primary-400 flex items-center gap-2 mb-4">
+                            <i data-lucide="code" class="w-6 h-6"></i>
+                            Machine Learning
+                        </h3>
+                        <ul class="text-gray-700 dark:text-gray-300 space-y-2">
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i>Supervised & Unsupervised Learning</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i>Deep Learning (PyTorch, Keras, TensorFlow)</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i>Scikit-learn, Model Evaluation, Recommender Systems</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-6 transition-colors duration-300">
+                        <h3 class="text-2xl font-semibold text-primary-600 dark:text-primary-400 flex items-center gap-2 mb-4">
+                            <i data-lucide="file-text" class="w-6 h-6"></i>
+                            Research & Leadership
+                        </h3>
+                        <ul class="text-gray-700 dark:text-gray-300 space-y-2">
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i>Quantum Mechanics</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i>Nanoscience & Photonics</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i>Team Leadership & Communication</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Page -->
+        <section id="achievements" class="page py-20 px-4">
+            <div class="container mx-auto max-w-6xl">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-16 flex items-center justify-center gap-4 text-gray-800 dark:text-white">
+                    <i data-lucide="trophy" class="w-12 h-12"></i>
+                    Achievements
+                </h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-6 transition-colors duration-300">
+                        <h3 class="text-2xl font-semibold text-primary-600 dark:text-primary-400 flex items-center gap-2 mb-4">
+                            <i data-lucide="book" class="w-6 h-6"></i>
+                            Publications
+                        </h3>
+                        <ul class="text-gray-700 dark:text-gray-300 space-y-2">
+                            <li>Authored a book on quantum mechanical behavior of atoms.</li>
+                            <li>Lead author of a published review article on eicosanoid signaling in Alzheimer's.</li>
+                            <li>Authored two self-development books.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-6 transition-colors duration-300">
+                        <h3 class="text-2xl font-semibold text-primary-600 dark:text-primary-400 flex items-center gap-2 mb-4">
+                            <i data-lucide="award" class="w-6 h-6"></i>
+                            Academic Excellence
+                        </h3>
+                        <ul class="text-gray-700 dark:text-gray-300 space-y-2">
+                            <li>Highest Academic Performer, Years 4 & 5 (Integrated Master's).</li>
+                            <li>GATE 2025: AIR 727.</li>
+                            <li>CSIR-NET-JRF 2025: AIR 37.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white p-8 text-center transition-colors duration-300">
+        <div class="container mx-auto">
+            <p class="mb-4 text-gray-400">© 2025 Lohitaksha Koppada. All rights reserved.</p>
+            <div class="flex justify-center gap-6">
+                <a href="mailto:lohitaksha.koppada123@gmail.com" class="hover:text-primary-400 transition-colors" aria-label="Email">
+                    <i data-lucide="mail" class="w-6 h-6"></i>
+                </a>
+                <a href="https://lohitakshakoppada.wixsite.com/lohitakshaden" target="_blank" rel="noopener noreferrer" class="hover:text-primary-400 transition-colors" aria-label="LinkedIn">
+                    <i data-lucide="linkedin" class="w-6 h-6"></i>
+                </a>
+                <a href="https://lohitakshakoppada.wixsite.com/lohitaksha-fiard" target="_blank" rel="noopener noreferrer" class="hover:text-primary-400 transition-colors" aria-label="Website">
+                    <i data-lucide="globe" class="w-6 h-6"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for page navigation and theme toggle -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeToggle = document.getElementById('theme-toggle');
+            const htmlElement = document.documentElement;
+            const navLinks = document.querySelectorAll('.nav-link');
+            const pages = document.querySelectorAll('.page');
+
+            // Initialize Lucide icons
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+
+            // Theme Toggle Logic
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            htmlElement.classList.add(currentTheme);
+            if (currentTheme === 'dark') {
+                themeToggle.innerHTML = '<i data-lucide="sun"></i>';
+            } else {
+                themeToggle.innerHTML = '<i data-lucide="moon"></i>';
+            }
+
+            themeToggle.addEventListener('click', () => {
+                if (htmlElement.classList.contains('light')) {
+                    htmlElement.classList.remove('light');
+                    htmlElement.classList.add('dark');
+                    localStorage.setItem('theme', 'dark');
+                    themeToggle.innerHTML = '<i data-lucide="sun"></i>';
+                } else {
+                    htmlElement.classList.remove('dark');
+                    htmlElement.classList.add('light');
+                    localStorage.setItem('theme', 'light');
+                    themeToggle.innerHTML = '<i data-lucide="moon"></i>';
+                }
+                if (typeof lucide !== 'undefined') {
+                    lucide.createIcons();
+                }
+            });
+
+            // Multi-Page Navigation Logic
+            function showPage(pageId) {
+                // Hide all pages
+                pages.forEach(page => page.classList.remove('active'));
+                // Show the selected page
+                const activePage = document.querySelector(pageId);
+                if (activePage) {
+                    activePage.classList.add('active');
+                }
+            }
+
+            function setActiveLink(linkId) {
+                // Remove active class from all links
+                navLinks.forEach(link => link.classList.remove('active'));
+                // Add active class to the selected link
+                const activeLink = document.querySelector(`a[href="${linkId}"]`);
+                if (activeLink) {
+                    activeLink.classList.add('active');
+                }
+            }
+
+            // Handle initial page load
+            const initialPage = window.location.hash || '#profile';
+            showPage(initialPage);
+            setActiveLink(initialPage);
+
+            // Add click event listeners to navigation links
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const pageId = e.target.getAttribute('href');
+                    history.pushState(null, '', pageId);
+                    showPage(pageId);
+                    setActiveLink(pageId);
+                });
+            });
+
+            // Handle browser back/forward buttons
+            window.addEventListener('popstate', () => {
+                const pageId = window.location.hash || '#profile';
+                showPage(pageId);
+                setActiveLink(pageId);
+            });
+        });
+    </script>
 </body>
 </html>
