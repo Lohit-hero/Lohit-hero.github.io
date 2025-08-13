@@ -1,1 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lohitaksha Koppada - Portfolio</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background-color: #f4f4f4;
+        color: #333;
+    }
+    header {
+        background: #222;
+        color: #fff;
+        padding: 20px 0;
+        text-align: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+    header h1 { margin: 0; font-size: 28px; }
+    header nav a {
+        color: #fff;
+        margin: 0 15px;
+        text-decoration: none;
+    }
+    section {
+        padding: 50px 10%;
+        background: #fff;
+        margin: 20px auto;
+        box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+        border-radius: 10px;
+    }
+    h2 { border-bottom: 2px solid #444; padding-bottom: 10px; }
+    ul { list-style: none; padding: 0; }
+    li { margin: 5px 0; }
+    .skills-bar {
+        background: #ddd;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    .skills-bar div {
+        height: 20px;
+        background: #28a745;
+        text-align: right;
+        padding-right: 5px;
+        color: white;
+    }
+    footer {
+        background: #222;
+        color: #fff;
+        text-align: center;
+        padding: 15px;
+        margin-top: 20px;
+    }
+</style>
+<script>
+    function smoothScroll(target) {
+        document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+</head>
+<body>
+
+<header>
+    <h1>Lohitaksha Koppada</h1>
+    <nav>
+        <a href="#about" onclick="smoothScroll('#about')">About</a>
+        <a href="#skills" onclick="smoothScroll('#skills')">Skills</a>
+        <a href="#experience" onclick="smoothScroll('#experience')">Experience</a>
+        <a href="#achievements" onclick="smoothScroll('#achievements')">Achievements</a>
+        <a href="#education" onclick="smoothScroll('#education')">Education</a>
+        <a href="#contact" onclick="smoothScroll('#contact')">Contact</a>
+    </nav>
+</header>
+
+<section id="about">
+    <h2>About Me</h2>
+    <p>Resolute and results-oriented researcher with expertise in designing and executing complex projects in quantum mechanics, computational chemistry, and interdisciplinary domains. Skilled in Python, Machine Learning, and scientific communication. IMSc 1st rank holder for two consecutive years at the University of Hyderabad.</p>
+</section>
+
+<section id="skills">
+    <h2>Skills</h2>
+    <ul>
+        <li>Python (NumPy, Pandas, Matplotlib, scikit-learn)</li>
+        <li>Machine Learning (Supervised & Unsupervised)</li>
+        <li>Quantum Mechanics & Computational Chemistry</li>
+        <li>Leadership & Team Management</li>
+        <li>Scientific Writing & Presentations</li>
+    </ul>
+    <div class="skills-bar"><div style="width: 95%;">Python</div></div>
+    <div class="skills-bar"><div style="width: 90%;">Machine Learning</div></div>
+    <div class="skills-bar"><div style="width: 85%;">Quantum Mechanics</div></div>
+</section>
+
+<section id="experience">
+    <h2>Experience</h2>
+    <ul>
+        <li><b>Master’s Project:</b> Investigating Screened Coulomb Potentials & Confined Hydrogen Atom (Aug–Dec 2024)</li>
+        <li><b>Master’s Project Phase 2:</b> Plasma & Spatially Confined Hydrogen Atom Analysis (Dec 2024–Mar 2025)</li>
+        <li>Collaborative Summer Project on Eicosanoids & Biosignalling (Apr–Aug 2021)</li>
+        <li>Lead author of review article on Eicosanoid Signaling in Alzheimer’s (Published May 2024)</li>
+    </ul>
+</section>
+
+<section id="achievements">
+    <h2>Achievements</h2>
+    <ul>
+        <li>Lead author in Elsevier journal publication (2024)</li>
+        <li>Author of three books (2025)</li>
+        <li>Highest Academic Performer in Years 4 and 5 (IMSc)</li>
+    </ul>
+</section>
+
+<section id="education">
+    <h2>Education</h2>
+    <ul>
+        <li>Integrated Master’s in Chemical Sciences – University of Hyderabad (CGPA: 8.5+)</li>
+        <li>12th – DAV Public School (94.25%)</li>
+        <li>10th – Jindal School (90.2%)</li>
+    </ul>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <p>Email: lohitaksha.koppada123@gmail.com</p>
+    <p>Phone: +91 9989927436</p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/lohitaksha-0b174622a" target="_blank">linkedin.com/in/lohitaksha-0b174622a</a></p>
+    <p>Website: <a href="https://lohitakshakoppada.wixsite.com/lohitakshaden" target="_blank">Portfolio Site</a></p>
+</section>
+
+<footer>
+    &copy; 2025 Lohitaksha Koppada. All rights reserved.
+</footer>
+
+</body>
+</html>
 
