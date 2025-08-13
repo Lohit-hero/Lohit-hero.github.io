@@ -1,12 +1,11 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const links = document.querySelectorAll("nav a");
-  links.forEach(link => {
-    link.addEventListener("click", e => {
-      if (link.getAttribute("href").startsWith("#")) {
-        e.preventDefault();
-        const target = document.querySelector(link.getAttribute("href"));
-        target.scrollIntoView({ behavior: "smooth" });
-      }
-    });
-  });
+function navigateTo(page) {
+    document.body.classList.add("fade-out");
+    setTimeout(() => {
+        window.location.href = page;
+    }, 300);
+}
+
+// Smooth fade-in effect
+window.addEventListener("load", () => {
+    document.body.classList.add("fade-in");
 });
